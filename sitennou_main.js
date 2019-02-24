@@ -12,7 +12,7 @@ var assets = [
 ];
 
 /*
-・functionをつかってキャラを作った時に、グループのなかでどうやって区別すればいいの忘れていた→
+・functionをつかってキャラを作った時に、グループのなかでどうやって区別すればいいのか忘れていた→
 charaGroup.childNodes[1]でできることを思い出して解決
 
 ・繰り返し遊びたいのだが、
@@ -76,7 +76,7 @@ function gameStart(){
     makeChara(40 * 5 - 32, 200, "images/donut03.png");
     makeChara(40 * 7 - 32, 200, "images/donut04.png");
 
-/*
+/* functionを使わない場合
     // りんご
     var chara1 = new Sprite(64, 64);
     chara1.image = core.assets["images/donut01.png"];
@@ -324,7 +324,7 @@ function gameStart(){
         sound1.play();
     });
 */
-/*    // 判定（失敗：キャラを直接タッチして判定しようとすると二回目以降何回もタッチされてしまうので断念）
+/*    // 判定（失敗：キャラを直接タッチして判定しようとすると二回目以降何回もタッチされてしまうので断念（イベントリスナの削除がうまくいかないので））
     function Judge(vorf, worm){
         charaTouch(chara2, vorf, worm, 0, 0, "にんじん");
         charaTouch(chara1, vorf, worm, 1, 0, "りんご");
