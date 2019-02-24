@@ -172,7 +172,7 @@ function gameStart(){// ゲーム画面
     MonkeyG.addChild(rope);
     //rope.follow(monkey);
 
-   //時間のカウント
+    //時間のカウント
     var timer = 55;
 
     var timelabel = new Label("TIME: " + timer);
