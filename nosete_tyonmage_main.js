@@ -81,7 +81,7 @@ function gameStart(){
     var mageGroup = new Group();
     scene.addChild(mageGroup);
 
-    // まげを出す関数（殿の倍率が変数→使わなかった）
+    // まげを出す関数（殿の大きさをにして変えようと思ったが結局使わずx=0.9で固定）
     function Mage(x){
         var mage = new Sprite(45, 60);
         mage.image = core.assets["images/bk_mage.png"];
