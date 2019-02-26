@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Clock</title>
+
+<script type="text/javascript">
+<!--
+window.onload = function()
+{
+ var width = 100; //横幅を指定します
+ var height = 100; //高さを指定します
+ var centerX = Math.floor(width / 2); //中心点を算出します（x）
+ var centerY = Math.floor(height / 2); //中心点を算出します（y）
+ var canvas = document.getElementById('clock'); //CANVASのエレメントを取得します
+ var context = canvas.getContext('2d'); //CANVASの2D描画コンテキストを取得します
+
+ //setInterval関数に、時計描画メイン関数を設定して、1秒ごとに関数を呼び出す
+ setInterval(drawClock, 1000);
+
+ //時計描画のメイン関数
+ function drawClock() {
+
+ var date = new Date(); //Date関数により現時点のローカル時間を取得します
+ var hour = date.getHours(); //時刻（時）を取得します
+ var minute = date.getMinutes(); //時刻（分）を取得します
+ var second = date.getSeconds(); //時刻（秒）を取得します
+
+
+ // 色の指定
+ context.strokeStyle = '#666666'; //時計のフレームの色を指定します
+
+ context.clearRect(0, 0, canvas.width, canvas.height); //CANVASの領域をクリアします
+
+ // 文字盤の描画
+ context.beginPath();
+ context.arc(centerX, centerY, centerX - 1, 0, Math.PI*2, false); //centerX,centerYを中心に半径centerX-1の円を描画します
+ context.stroke(); //描画を実行する
+
+ context.save(); //現在のカーソル情報を保存する
+
+
+ //短針を描画する
+ 
+ }
+}
+//-->
+</script>
+
+</head>
+<body>
+<canvas id="clock"></canvas>
+</body>
+</html>
